@@ -1,0 +1,180 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, lab(72.04% -0.47 -36.08), #ffffff);
+  color: #333;
+  padding: 20px;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: #007acc;
+}
+
+header input {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* CATEGORY SELECT */
+#categoryFilter {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#categorySelect {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #007acc;
+  background: #e1f5fe;
+}
+
+/* PRODUCTS GRID */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  width: 260px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.product-card h3 {
+  font-size: 18px;
+  color: #007acc;
+}
+
+.product-card input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.product-card button {
+  background: #007acc;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.product-card button:hover {
+  background: #005e9c;
+}
+
+/* CART */
+#cartSection {
+  background: #ffffff;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+#cartItems {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+#cartItems li {
+  padding: 8px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.cart-footer {
+  text-align: center;
+}
+
+#mpesaInput {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#submitOrder {
+  background: hwb(232 0% 50%);
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+#submitOrder:hover {
+  background: #006400;
+}
+/* Style for the Type label and select */
+.type-section {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.type-label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.type-select {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Optional: Add some spacing between form elements */
+.product-card input,
+.product-card select,
+.product-card button {
+  margin-bottom: 10px;
+}
+
+/* Button styling */
+.product-card button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+  background-color: #0056b3;
+}

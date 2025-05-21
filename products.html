@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EVEREST | Product List</title>
+  <link rel="stylesheet" href="products.css"/>
+</head>
+<body>
+  <header>
+    <h1>KING EVEREST DECORS HARDWARE LIMITED </h1>
+    <input type="text" id="searchInput" placeholder="Search products...">
+  </header>
+
+  <main>
+    <section id="categoryFilter">
+      <select id="categorySelect">
+        
+        <option value="">All Categories</option>
+        <option value="ppr_fittings">Fittings (PPR)</option>
+        <option value="pvc_fittings">Fittings (PVC)</option>
+        <option value="ppr_pipes">Pipes (PPR)</option>
+        <option value="pvc_pipes">Pipes (PVC)</option>
+        <option value="valves">Valves</option>
+        <option value="drainage">Drainage & Waste</option>
+        <option value="bathroom">Shower & Bathroom Accessories</option>
+      </select>
+    </section>
+   
+      
+
+    <section id="productContainer" class="products">
+      <!-- Products dynamically inserted here -->
+    </section>
+
+    <section id="cartSection">
+      <h2>Your Cart</h2>
+      <ul id="cartItems"></ul>
+      <div class="cart-footer">
+        <p>Total: KES <span id="totalAmount">0</span></p>
+        <input type="text" id="mpesaInput" placeholder="Enter Mpesa Number">
+        <button id="submitOrder">Submit Order</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="products.js"></script>
+</body>
+</html>
