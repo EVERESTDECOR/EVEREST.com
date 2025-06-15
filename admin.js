@@ -74,11 +74,16 @@ function saveProduct() {
   const newProduct = { name, category, manufacturer, variants };
 
   // Save to localStorage (append or create new)
-  const storedProducts = JSON.parse(localStorage.getItem('products') || '[]');
-  storedProducts.push(newProduct);
-  localStorage.setItem('products', JSON.stringify(storedProducts));
+function saveProductToFirebase(product) {
+  db.collection("products").add(product)
+    .then(() => {
+      alert("Product saved to Firebase!");
+    })
+    .catch(error => {
+      console.error("Error adding product: ", error);
+    });
+}
 
-  alert('Product saved successfully!');
 
   // Clear form for new entry
   document.getElementById('productName').value = '';
