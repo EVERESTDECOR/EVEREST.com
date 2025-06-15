@@ -6,7 +6,21 @@ const mpesaInput = document.getElementById('mpesaInput');
 const searchInput = document.getElementById('searchInput');
 const categorySelect = document.getElementById('categorySelect');
 
-let products = JSON.parse(localStorage.getItem('products') || '[]');
+function loadProductsFromFirebase() {
+  db.collection("products").get().then((querySnapshot) => {
+    const productArray = [];
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      data.id = doc.id;
+      productArray.push(data);
+    });
+
+    displayProducts(productArray); // your existing function
+  });
+}
+
+window.onload = loadProductsFromFirebase;
+
 let cart = [];
 
 function populateCategorySelect() {
