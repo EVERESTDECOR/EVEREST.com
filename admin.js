@@ -73,25 +73,33 @@ function saveProduct() {
 
   const newProduct = { name, category, manufacturer, variants };
 
-  // Save to localStorage (append or create new)
-function saveProductToFirebase(product) {
-  db.collection("products").add(product)
-    .then(() => {
-      alert("Product saved to Firebase!");
-    })
-    .catch(error => {
-      console.error("Error adding product: ", error);
-    });
-}
+  // ✅ Save to Firebase (requires global `firestoreInstance`)
+  if (window.firestoreInstance) {
+    saveProductToFirebase(newProduct);
+  } else {
+    alert("Firebase not initialized properly.");
+    console.error("Firebase instance is undefined.");
+  }
 
-
-  // Clear form for new entry
+  // Clear form
   document.getElementById('productName').value = '';
   document.getElementById('category').value = '';
   document.getElementById('manufacturer').value = '';
   document.querySelector('#typeContainer .multi-inputs').innerHTML = '<input type="text" class="type" placeholder="Type" />';
   document.querySelector('#sizeContainer .multi-inputs').innerHTML = '<input type="text" class="size" placeholder="Size" />';
   document.getElementById('priceTable').innerHTML = '<label>Enter Prices (for each Type x Size)</label>';
+}
+
+function saveProductToFirebase(product) {
+  const db = window.firestoreInstance;
+  db.collection("products").add(product)
+    .then(() => {
+      alert("✅ Product saved to Firebase!");
+    })
+    .catch(error => {
+      console.error("❌ Error adding product: ", error);
+      alert("Error saving product.");
+    });
 }
 
 document.querySelector('#typeContainer .multi-inputs input').addEventListener('input', updatePriceInputs);
