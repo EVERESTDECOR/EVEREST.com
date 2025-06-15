@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Panel - Add Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 10px;
+    }
+    h2 {
+      text-align: center;
+    }
+    .form-container input[type="text"] {
+      width: 100%;
+      margin: 5px 0 12px;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    #typeContainer, #sizeContainer {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .multi-inputs input {
+      display: inline-block;
+      margin: 5px 5px 0 0;
+      width: calc(50% - 10px);
+      padding: 6px;
+    }
+    #priceTable > div {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    #priceTable > div input {
+      flex: 1;
+      padding: 6px;
+    }
+    button {
+      padding: 10px 18px;
+      cursor: pointer;
+      background: #007bff;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Admin Panel - Add New Product</h2>
+
+  <div class="form-container">
+    <input type="text" id="productName" placeholder="Product Name" />
+    <input type="text" id="category" placeholder="Category" />
+    <input type="text" id="manufacturer" placeholder="Manufacturer" />
+
+    <div id="typeContainer">
+      <label>Type</label>
+      <div class="multi-inputs">
+        <input type="text" class="type" placeholder="Type" />
+      </div>
+      <button onclick="addType()">+ Add Type</button>
+    </div>
+
+    <div id="sizeContainer">
+      <label>Size</label>
+      <div class="multi-inputs">
+        <input type="text" class="size" placeholder="Size" />
+      </div>
+      <button onclick="addSize()">+ Add Size</button>
+    </div>
+
+    <div id="priceTable">
+      <label>Enter Prices (for each Type x Size)</label>
+      <!-- Prices inputs inserted here -->
+    </div>
+
+    <button onclick="saveProduct()">✅ Save Product</button>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
