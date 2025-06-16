@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to bottom right, lab(53.48% 40.63 59.23), #ffffff); /* blue-white theme */
+  background: linear-gradient(to bottom right, #0a3fba, #ffffff); /* blue-white theme */
     color: #333;
     min-height: 100vh;
 }
